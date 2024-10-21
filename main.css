@@ -1,0 +1,809 @@
+/* Reset CSS */
+@import 'reset.css';
+
+/* Global styles */
+:root {
+  --main-bg: rgba(28, 71, 68, 0.702);
+  --left-bg: #fde8fa;
+  /* Background color for sidebar */
+  --right-bg: linear-gradient(45deg, #7fb3b2, #aca1a6);
+  --container-bg: lightgray;
+  /* Background color for the container */
+  --heading: rgba(19, 63, 64, 0.804);
+  --link-color: white;
+  --link-bg: rgb(35, 131, 169);
+  --link-hover-color: rgb(67, 121, 52);
+  --link-hover-bg: white;
+  --button-bg: #f1f1f1;
+  --box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
+  background-color: var(--main-bg);
+  background-image: linear-gradient(180deg, white, transparent);
+}
+/******************************************************************
+     ********************* Modal Window ***********************
+*******************************************************************/
+/* Center the Modal */
+/* Center the Modal */
+#password-strength-indicator-text.weak {
+  color: red; /* Customize the color for weak strength */
+}
+
+#password-strength-indicator-text.moderate {
+  color: orange; /* Customize the color for moderate strength */
+}
+
+#password-strength-indicator-text.strong {
+  color: green; /* Customize the color for strong strength */
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  width: 80%;
+  max-width: 25rem; /* Adjust max-width as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3em;
+  border: none; /* Remove the border */
+  border-radius: 0; /* Remove the border-radius */
+  color: var(--links); /* Adjust the text color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  min-width: 20vh;
+  flex-direction: column;
+  margin: 0;
+}
+
+header {
+  background: var(--heading);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0.5em;
+  font-size: 1.09em;
+}
+
+/******************************************************************
+                 ** Sidebar Decoration**
+*******************************************************************/
+#sidebarfooter-links {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+#sidebarfooter-links h3.button {
+  font-size: 1.2rem;
+  margin-bottom: 4rem; /* Remove the margin */
+  color: #252323; /* Text color */
+  background-color: #9faebe; /* Background color */
+  border: none;
+  padding: 0.625em 1.25em;
+  border-radius: 0.3em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#sidebarfooter-links h3.button:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}
+
+#sidebarfooter-links a i {
+  margin-right: 0.6em;
+}
+
+.sidebar {
+  width: 28rem; /* Adjust the width as needed */
+  background: linear-gradient(to right, rgb(237, 248, 208), rgb(180, 205, 205));
+  /* Adjust the background color as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%; /* Make the sidebar full height */
+  overflow-y: auto;
+}
+.sidebar, .main {
+  transition: margin 0.3s ease-in-out; /* You can adjust the duration as needed */
+}
+.container {
+  display: flex;
+  flex: 1;
+  margin-left: 30rem;
+}
+.main {
+  margin-left: 30rem; /* Same width as the sidebar to move content to the right */
+  padding: 1rem;
+}
+/* Left column (nav) */
+nav {
+  flex: 20%;
+  color: var(--back);
+  /* Background color for the sidebar */
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 a {
+  align-items: center;
+  color: var(--back);
+  padding: 1.2em;
+  text-decoration: none;
+}
+
+/******************************************************************
+     ********************* Navigation***********************
+*******************************************************************/
+nav a,
+nav a:visited,
+button {
+  color: var(--link-color);
+  text-decoration: none;
+  background-color: var(--link-bg);
+  cursor: pointer;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  text-align: center;
+}
+
+nav a:hover,
+nav a:visited:hover,
+button:hover {
+  color: var(--link-hover-color);
+  background-color: var(--link-hover-bg);
+}
+
+nav a:active,
+nav a:visited:active,
+button:active {
+  color: rgb(65, 157, 120);
+  background-color: #f1f1f1;
+}
+/******************************************************************
+     ********************* Hiding the Details Arrow***********************
+*******************************************************************/
+summary {
+  display: block;
+  list-style: none;
+}
+
+summary::marker,
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* CSS for the arrow symbol */
+nav a span {
+  margin-left: 0.3em;
+  font-size: 1.2rem;
+}
+/******************************************************************
+     *********** Making the list in different style************
+*******************************************************************/
+.adventure,
+.unique
+.finace,
+.career
+{
+  border: 0.1em;
+  border-radius: 2.3em 4.5em;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 2em;
+}
+.adventure {
+  background-color: var(--left-bg);
+}
+
+.unique {
+  background-color: var(--link-bg);
+}
+
+.finace {
+  background-color: var(--button-bg);
+}
+
+.career {
+  background-color: var(--box-shadow);
+}
+
+.list-items li {
+  margin-bottom: 	0.6em;/* Adjust the margin as needed */
+  border-bottom: 	0.06em solid #ccc; /* Add a border line between items */
+  padding-bottom: 0.6em; /* Add padding at the bottom of each item */
+}
+
+/******************************************************************
+     ********************* Main Page***********************
+*******************************************************************/
+main {
+  flex: 80%;
+  background: var(--right-bg); /* Use background property to apply gradient */
+  color: black;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.3rem;
+  border: 0.06em solid #73bbaf;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 30rem; /* Same width as the sidebar to move content to the right */
+  padding: 1rem;
+}
+
+button {
+  display: block;
+}
+
+
+
+
+/******************************************************************
+     ********************* Headings***********************
+*******************************************************************/
+h1 {
+  text-align: center;
+  padding-bottom: 1rem;
+  color: #ebdcef;
+  font-weight: 800;
+  /* semibold */
+  font-size: 2rem;
+  font-style: italic;
+}
+
+h2 {
+  text-align: center;
+  padding-left: 0.5em;
+  padding-bottom: 1rem;
+  color: #5b5938;
+  font-weight: 600;
+  /* semibold */
+  font-size: 2rem;
+  font-style: normal;
+}
+h3 {
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  font-weight: bold;
+  margin: .5rem 0;
+  color: #165758; /* Text color for h3 */
+}
+
+main,
+nav a,
+button,
+legend,
+fieldset {
+  box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
+  border-radius: 0.3rem;
+  border: 0.01em solid #911553;
+}
+
+fieldset {
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+}
+
+legend {
+  padding: 0.5rem;
+}
+
+/******************************************************************
+     ** Reset Page login Page Register Page and Forget Page**
+*******************************************************************/
+
+
+.page-content {
+  width: 50%;
+  margin: 5em auto;
+  box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
+  border-radius: 0.3rem;
+  border: 0.01em solid #911553;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-container {
+  position: relative;
+  border: none;
+  border-radius: 0;
+  color: var(--links);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em;
+  max-width: 25rem;
+  margin: auto;
+}
+
+.page-header {
+  color: var(--link);
+  text-decoration: none;
+  color: #fde8fa;
+  position: fixed;
+}
+
+.content-container {
+  min-height: 100vh;
+  /* Ensure the content container takes up the full viewport height */
+  padding: 1rem;
+  border: 0.6em solid #911553;
+  border-radius: 0.3rem;
+  box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
+  width: 50%;
+  margin: 2rem auto;
+}
+/******************************************************************
+     ********************* Reset page***********************
+*******************************************************************/
+.page-instructions {
+  text-align: center;
+  color: var(--links);
+  /* Text color for page instructions */
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.page-requirements {
+  text-align: center;
+  color: var(--back2);
+  /* Text color for page requirements */
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+/* Style the form groups (label and input together) */
+#page-form .form-group {
+  display: flex;
+  align-items: flex-start; /* Use flex-start to align items to the left */
+  margin: 0.5em 0;
+}
+
+
+#page-form label {
+  width: 9rem;
+  text-align: left;
+  margin-right: 0.625em;
+  display: inline-block;
+}
+
+#page-form input {
+  flex: 1;
+  margin: 0.2rem 0;
+  padding: 0.5rem;
+  border: 0.06em solid #911553;
+  border-radius: 0.8em;
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block;
+}
+/******************************************************************
+     ********************* Create Account page*****************
+*******************************************************************/
+#security_question label{
+  margin: 0.2rem 0;
+  padding: 0.5rem;
+  border: 0.06em solid #911553;
+  border-radius: 0.8em;
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Style for the checkbox input */
+#checkbox input[type="checkbox"] {
+  display: inline-block;
+  margin-left: 18.75em;
+  /* Adjust the margin as needed */
+  text-align: right;
+}
+
+/* Style for the label */
+#checkbox label {
+  display: inline-block;
+  text-align: left;
+  margin-right: 18.75em;
+  /* Adjust the margin as needed */
+}
+
+/* Remove margin-top property from form button */
+form button {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background-color: transparent;
+  color: var(--link-color);
+  text-align: center;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  background-color: var(--heading);
+  color: var(--link);
+  margin-top: 1.25em;
+}
+
+form button:hover {
+  background-color: var(--link-hover-bg);
+  color: var(--link-hover-color);
+}
+
+/* Add these rules to center the form within the page */
+form#page-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: var(--back);
+  padding: 1.2em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Apply styles to ul with a specific class, for example, "corner-list" */
+ul.corner-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* Center the text within the ul */
+}
+
+ul.corner-list li {
+  display: inline-block; /* Display list items side by side */
+  padding: 0.3em 0.6em;
+  border: 0.1em solid rgb(88, 109, 17);
+  border-radius: 0.3em;
+  background-color: #f7f7f7; /* Background color for the items */
+}
+
+ul.corner-list li a {
+  text-decoration: none;
+  color: rgb(88, 109, 17);
+}
+/* Style the section container */
+section {
+  position: relative;
+}
+/* Style the actions container */
+.actions {
+  top: 0;
+  left: 0;
+  display: flex;
+  margin-left: 18.75em;
+}
+
+/* Style the action links */
+.actions a {
+  display: inline-block;
+  padding:0.3em 0.3em;
+  text-decoration: none;
+  color: #c4ced9;
+  display: inline-block;
+  margin-right: 0.3em;
+  background-color: rgb(38, 121, 146);
+}
+/******************************************************************
+     ********************* Footer***********************
+*******************************************************************/
+footer {
+  background-color: #222; /* Background color for footer */
+  color: #fff; /* Text color for footer */
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+/******************************************************************
+     ********************* Item deatils Lists*****************
+*******************************************************************/
+.list_description {
+  text-align: center; /* Center the items horizontally */
+}
+
+.list_description li a {
+  margin: 1em auto; /* Center the items vertically and horizontally */
+  color: #620436;
+  text-align: center;
+  font-size: medium;
+  font-weight: 600;
+  border: 0.1em solid #f7ecfa;
+  border-radius: 1rem;
+  padding: 0.6em 1.3em;
+  width: fit-content;
+}
+
+/* Adjust the list item styles to allow text wrapping */
+.list-items li {
+  margin-bottom: 0.6em;
+  border-bottom: 0.1em solid #ccc;
+  padding-bottom: 0.6em;
+  word-wrap: break-word; /* Allow words to break and wrap to the next line */
+
+}
+
+/* Allow the description to wrap to the next line */
+.list-items li span.description {
+  display: block;
+  margin: 0; /* Remove default margin */
+  white-space: pre-line; /* Preserve white spaces and allow line breaks */
+}
+/* Additional styling for better readability */
+.list-items li strong {
+  display: block;
+  margin-bottom: 0.3em;
+  color: #165758;
+}
+
+
+
+/* Add blue bullet points to h4 elements */
+ul li h4::before {
+  content: '\2022'; /* Unicode character for a bullet point */
+  color: rgb(14, 14, 23); /* Color of the bullet point */
+
+}
+/******************************************************************
+     ********************* Add a new Item***********************
+*******************************************************************/
+#adding_new_item {
+  text-align: center; /* Center the content within the section */
+  padding: 1.3em;
+  margin-top: 2em; /* Add some padding for spacing */
+}
+#adding_new_item label{
+  width: 6em;
+  text-align: left;
+  display: inline-block;
+
+}
+#adding_new_item input{
+  flex: 1;
+  margin: 0.2rem 0;
+  padding: 0.2rem;
+  border: 0.1em solid #911553;
+  border-radius: 0.5em;
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block;
+}
+#adding_new_item textarea{
+  flex: 1;
+  margin: 0.2rem 0;
+  padding: 0.2rem;
+  border: 0.1em solid #4e2b3c;
+  border-radius: 0.2em;
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block;
+}
+/******************************************************************
+     ********************* Like and Comment buttons*********
+*******************************************************************/
+/* Style for the like button */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Hide the checkbox and the textarea */
+input[type="checkbox"],
+.new-comment {
+  display: none;
+}
+
+/* When the checkbox is checked, show the textarea */
+input[type="checkbox"]:checked + .new-comment {
+  display: block;
+}
+
+.like-button, .comment-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aa0712;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  display: inline-block;
+}
+
+.like-button i, .comment-button i {
+  border: none;
+}
+
+#comment-toggle {
+  display: none;
+}
+
+.new-comment {
+  display: none;
+}
+
+#comment-toggle:checked + .new-comment {
+  display: block;
+}
+/******************************************************************
+     ********************* Sidebar footer***********************
+*******************************************************************/
+/* Style for the footer links */
+#sidebarfooter-links {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: none; /* Remove the border */
+}
+#sidebarfooter-links h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4rem; /* Remove the margin */
+}
+
+#sidebarfooter-links a {
+  color: #262323; /* Remove text-decoration property */
+}
+
+#sidebarfooter-links a i {
+  margin-right: 0.6em;
+}
+
+
+
+
+.error {
+  display: inline-block;
+  color: rgb(3, 130, 3);
+  font-style: italic;
+  margin: 1em;
+}
+
+div>.error {
+  /* If an error is inside a div (like, next to an input), then we don't need
+   * any extra top/bottom margins */
+  margin: 0 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+.list-items li img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.6em;
+  object-fit: cover; /* or "contain" depending on your preference */
+}
+.image-box {
+  max-width: 18.75em; /* Adjust the max-width as needed */
+  height: 12.5em; /* Adjust the height as needed */
+  overflow: hidden; /* Hide any overflow beyond the specified dimensions */
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* or "contain" depending on your preference */
+}
+
+.back-to-link {
+  display: flex;
+  align-items: center;
+}
+
+.back-to-link h3 {
+  margin: 0; 
+}
+
+.back-to-link a {
+  margin-left: 0.01em; 
+  display: inline-block;
+}
+
+/* Add your additional styles here */
+
+.item-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.item-details-container > div {
+  flex: 1;
+  max-width: 48%;
+}
+
+.item-details-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.view_item_class{
+  padding:1em;
+}
+.view_item_class li {
+  padding: 0.2em ;
+}
+.image-container {
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.action-links {
+  display: flex;
+  gap: 1em;
+}
+
+.action-links a {
+  text-decoration: none;
+  color: #333; /* You can customize the color */
+  padding: 0.2em 10px;
+  border: 0.05em solid #333; /* You can customize the border */
+  border-radius: 0.2em;
+  background-color: #fff; /* You can customize the background color */
+}
+
+.action-links a:hover {
+  background-color: #333; /* You can customize the hover background color */
+  color: #fff; /* You can customize the hover color */
+}
+
+
+/******************************************************************
+     ********************* The End***********************
+*******************************************************************/
